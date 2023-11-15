@@ -174,12 +174,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Hooking.Patterns\Hooking.Patterns.cpp" />
     <ClCompile Include="ModUtils\Patterns.cpp" />
     <ClCompile Include="SafeWrite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hooking.Patterns\Hooking.Patterns.h" />
     <ClInclude Include="ModUtils\Patterns.h" />
     <ClInclude Include="patches.h" />
     <ClInclude Include="SafeWrite.h" />
