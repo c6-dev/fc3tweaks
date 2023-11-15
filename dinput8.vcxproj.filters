@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="SafeWrite.cpp" />
+    <ClCompile Include="Hooking.Patterns\Hooking.Patterns.cpp">
+      <Filter>Hooking.Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="ModUtils\Patterns.cpp">
+      <Filter>ModUtils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="patches.h" />
+    <ClInclude Include="SafeWrite.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="Hooking.Patterns\Hooking.Patterns.h">
+      <Filter>Hooking.Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="ModUtils\Patterns.h">
+      <Filter>ModUtils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dinput8.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Hooking.Patterns">
+      <UniqueIdentifier>{f3ef6508-a714-4497-bf3f-bb7c02206f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModUtils">
+      <UniqueIdentifier>{fcbc62a6-406b-4d97-aecb-ab2ad00fca30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
