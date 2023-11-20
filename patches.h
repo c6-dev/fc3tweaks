@@ -1,7 +1,9 @@
 #pragma once
 #include "ModUtils/Patterns.h"
+#include "calls.h"
 UInt32 quickSellConfirmationCBAddr = NULL;
 UInt32 quickSellRetnAddr = NULL;
+
 
 __declspec(naked) void SkipQuickSellConfirmation() {
 	__asm {
@@ -10,7 +12,7 @@ __declspec(naked) void SkipQuickSellConfirmation() {
 		push eax
 		mov ecx, esi
 		call quickSellConfirmationCBAddr
-		lea eax, dword ptr ss:[ebp - 0x9C]
+		cmp dword ptr[esp+0x40], 0
 		jmp quickSellRetnAddr
 	}
 }
@@ -28,9 +30,9 @@ void writePatches() {
 	auto removeOnlinePopup = hook::make_module_pattern(module, "50 C7 45 90 02 00 00 00").get_first(8);
 	PatchMemoryNop((UInt32)removeOnlinePopup, 7);
 
-	auto skipQuickSellConfirmation = hook::make_module_pattern(module, "83 7E 6C FF").get_first(0xC3);
+	auto skipQuickSellConfirmation = hook::make_module_pattern(module, "68 63 EA 01").get_first(-14);
+	quickSellRetnAddr = (UInt32)hook::make_module_pattern(module, "68 63 EA 01").get_first(63);
 	quickSellConfirmationCBAddr = (UInt32)hook::make_module_pattern(module, "83 E4 F8 83 EC 1C 53 8B D9 8B 43 6C 56 57 3B 45 08").get_first(-3); 
-	quickSellRetnAddr = (UInt32) hook::make_module_pattern(module, "83 7E 6C FF").get_first(0xE8);
 	WriteRelJump((UInt32)skipQuickSellConfirmation, (UInt32)SkipQuickSellConfirmation);
 
 }

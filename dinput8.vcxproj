@@ -97,6 +97,7 @@
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,7 +139,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;UNIVERSALPROXYCHAIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -178,6 +179,7 @@
     <ClCompile Include="SafeWrite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="calls.h" />
     <ClInclude Include="ModUtils\Patterns.h" />
     <ClInclude Include="patches.h" />
     <ClInclude Include="SafeWrite.h" />

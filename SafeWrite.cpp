@@ -75,3 +75,4 @@ void PatchMemoryNop(UInt32 Address, UInt32 Size)
 
 	FlushInstructionCache(GetCurrentProcess(), (LPVOID)Address, Size);
 }
+
