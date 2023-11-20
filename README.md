@@ -5,6 +5,7 @@ Includes:
 * Remove Quick Sell confirmation pop-up  
 
 Planned:
+* INI config  
 * Auto-loot cash piles  
 * Save hotkey  
 * Hold to swap weapon when looting body  
